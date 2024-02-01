@@ -1,14 +1,61 @@
 ### get events
-GET http://127.0.0.1:8000/api/events
+GET {{uri}}/events
 Accept: application/json
-###
+
+### get event attendees with paginate
+GET {{uri}}/events/10/attendees
+Accept: application/json
+
+### get event attendees with paginate and page
+GET {{uri}}/events/10/attendees?page=1
+Accept: application/json
+
+### get event attendees with paginate
+GET {{uri}}/events/10/attendees/23
+Accept: application/json
+
+### get events with auth
+GET {{uri}}/events
+Accept: application/json
+Authorization: {{token}}
+
 ### get event
-GET http://127.0.0.1:8000/api/events/2
+GET {{uri}}/events/1
 Accept: application/json
-### log
-POST http://127.0.0.1:8000
+
+### create
+POST {{uri}}/events
 Accept: application/json
+Content-Type: application/json
+
+{
+    "name": "hany",
+    "description": "desc",
+    "start_time": "2024-03-01 15:00:00",
+    "end_time": "2024-03-01 16:00:00"
+}
+
+### update
+PUT {{uri}}/events/1
+Accept: application/json
+Content-Type: application/json
+
+{
+    "name": "Event name 1",
+    "description": "Description for event 1"
+}
+
+### post with auth
+POST {{uri}}/events
+Accept: application/json
+Content-Type: application/json
+Authorization: {{token}}
 
 {
     "name": "hany"
 }
+
+### delete
+DELETE {{uri}}/events/7
+Accept: application/json
+Content-Type: application/json
