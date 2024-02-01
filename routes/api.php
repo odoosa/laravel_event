@@ -17,3 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+
+Route::apiResource('events', \App\Http\Controllers\Api\EventController::class);
+Route::apiResource('events.attendees', \App\Http\Controllers\Api\AttendeeController::class)->scoped(['attendees' => 'event']);

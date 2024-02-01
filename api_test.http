@@ -1,0 +1,14 @@
+### get events
+GET http://127.0.0.1:8000/api/events
+Accept: application/json
+###
+### get event
+GET http://127.0.0.1:8000/api/events/2
+Accept: application/json
+### log
+POST http://127.0.0.1:8000
+Accept: application/json
+
+{
+    "name": "hany"
+}
